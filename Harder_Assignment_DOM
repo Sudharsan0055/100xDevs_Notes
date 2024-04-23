@@ -1,0 +1,58 @@
+<html>
+<head><script>
+
+async function hitBackEnd(){
+        const principle = document.getElementById("principle").value;
+        const interest = document.getElementById("rateOfInterest").value/100
+        const period = document.getElementById("period").value;
+        // const response = await fetch("https://sum-server.100xdevs.com/interest?principal="+principle+ "&rate=" + interest + "&time=" + period)
+        // const ans = await response.text()
+        // alert(ans)
+        //creating my own backend
+        const ans = principle * interest * period;
+        const total = parseInt(principle)  + parseInt(ans);
+        document.getElementById("total").innerHTML = "Interest is: " + ans + ", Total is: " +total;
+    }
+</script>
+</head><body>
+   
+    <div style="text-align:center">
+
+
+        <h1 style="margin-top:100px">Calculating simple Interest</h1>
+
+        <input style="width:200px;
+        height:35px;" 
+        id="principle" type="text" placeholder="Principle Amount"> 
+        <br><br>
+        <input style="width:200px;
+        height:35px;" 
+         id="rateOfInterest" type="text" placeholder="Interest per Year">
+        <br><br>
+        <input style="width:200px;
+        height:35px;" 
+        id="period" type="text" placeholder="Period in Year">
+        <br><br>
+
+
+        <button style="background-color: black;
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;"
+        onclick="hitBackEnd()">Calculate</button> 
+        <br><br>
+
+
+        <p id="total" style="font-size: 20px;
+        font-weight: 500;"></p>
+        <br><br>
+    </div>
+
+
+
+</body>
+</html>
